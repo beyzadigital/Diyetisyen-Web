@@ -7,8 +7,8 @@ CREAM=(255,247,232); GOLD=(240,196,104)
 def up(s): return s.replace("i","İ").replace("ı","I").upper()
 
 T={1:("Sen işine bütün emeğini koyarsın…","Ama kazancın büyük kısmı başkasının cebine girer."),
-   2:("Yıllarca okudun, sonunda diplomanı aldın.","Ama kimse sana bunu nasıl gelire dönüştüreceğini öğretmedi."),
-   3:("Kendi dükkânını açtın.","Ama kimse sana kira, vergi ve giderlerin ne kadar büyük olduğunu söylemedi."),
+   2:("Kendi dükkânını açtın.","Ama kimse sana kira, vergi ve giderlerin ne kadar büyük olduğunu söylemedi."),
+   3:("Yıllarca okudun, sonunda diplomanı aldın.","Ama kimse sana bunu nasıl gelire dönüştüreceğini öğretmedi."),
    4:("Ne kadar çok çalışırsan çalış, zamanın hep başkasının kontrolünde…","Maaş alır, faturaları öder ve yeniden çalışmaya dönersin."),
    5:("Seni yerinde tutmak için artık zincirlere ihtiyaçları yok…","Ekran başında geçirdiğin zaman, bunu senin yerine yapıyor."),
    6:("Paranın nereye gideceğini belirleyen bir planın olmalı.","İhtiyaçlarını, birikimini, yatırımını sen yönetmezsen paran senin yerine karar verir.")}
