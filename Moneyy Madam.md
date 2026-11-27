@@ -10,7 +10,7 @@ Son güncelleme: 2026-11-27 (kullanıcı düzeltmeleri işlendi). Güvenilir olm
 - Proje: Instagram için **kaydırmalı (carousel) gönderiler**. Para/işletme/kariyer konularında "gizli düzenleri" anlatan, çizgi film (2D illüstrasyon) tarzında görsel serisi.
 - Hesap adı: **@moneyymadam** (sayfa adı "Moneyy Madam"). Karar verildi, görsellere eklendi.
 - Referans (esinlendiğimiz) hesap: **@darkmoneyfilesai**. Aynı format, **kadın karakterlerle**, **Türkçe** metinle, **kendi amber renk paletimizle**.
-- Şimdiye kadar **4 gönderi** üretildi (toplam 24 görsel). Hepsi yazılı ve yazısız hâlleriyle depoda duruyor. **Oran kuralı: her zaman 4:5** (Gönderi 1–2 yanlışlıkla 3:4 kaldı, düzeltme bekliyor).
+- Şimdiye kadar **4 gönderi** üretildi (toplam 24 görsel). Hepsi yazılı ve yazısız hâlleriyle depoda duruyor. **Oran kuralı: her zaman 4:5** (Gönderi 1–2 3:4 kaldı, düzeltilmeyecek).
 - Görsel üretim aracı: **Higgsfield** (model `gpt_image_2_6`). Yazılar yapay zekâyla değil, **Python/Pillow ile koda** eklenir (Türkçe harfler hatasız olsun diye).
 - Her görselin sırası: **önce sahne (yazısız, boş balonlu/boş alt kısımlı) üretilir → onaylanır → yazı en son eklenir.**
 
@@ -89,7 +89,7 @@ Her sayfa iki panel: üst = patron (sert patron kadın), alt = lider (şapkalı 
   - Gönderi 3: kullanıcı özellikle **mekânı ve diğer insanları karartıp**, kırmızılı kadını ve şapkalı kadını parlak bırakmamızı istedi (referanstaki gibi). Bu karartma **yalnızca Gönderi 3 için** geçerli. Gönderi 4 için kullanıcı açıkça "karartmayı unut" dedi.
 - **Boyut KURALI (kullanıcı kararı): her gönderi, Dark Money referans sayfasının gönderi oranında yapılır.** Referans ekran görüntüleri yaklaşık 1290×1600 px, yani **4:5**. Yeni her görsel **4:5 (1792×2240 px)** üretilir.
   - Gönderi 3 ve 4: 4:5 (doğru).
-  - **Gönderi 1 ve 2: 3:4 (1744×2336 px) üretildi. Bu YANLIŞ oran.** Başta referans oranını kontrol etmeden 3:4 seçtim, sonradan düzeltmedim. Kullanıcı bunun 4:5 olması gerektiğini söyledi. **Bu iki gönderiyi 4:5'e çevirme işi henüz yapılmadı** (bkz. Bölüm 10, 13).
+  - **Gönderi 1 ve 2: 3:4 (1744×2336 px) üretildi** (başta referans oranını kontrol etmeden seçildi). **Kullanıcı kararı (son): bu iki gönderinin boyutu DÜZELTİLMEYECEK, olduğu gibi kalacak.** Kural yalnızca bundan sonraki yeni üretimler için geçerli: referans sayfanın post boyutu (4:5).
 - **Her görselde:** Her kadının tam **iki eli** olacak (fazla el/yanlış anatomi sorun çıkardı, düzeltildi).
 - **Görselin içinde yazılar:** Referanstaki İngilizce yazılar silinir. Gerekli sahne yazıları (etiket, ekran düğmesi, tabela) Türkçe ve kısa tutulur; sorun çıkarsa boş bırakılıp koda eklenir.
 - **Yazı kuralları (koddan eklenen):**
@@ -103,7 +103,7 @@ Her sayfa iki panel: üst = patron (sert patron kadın), alt = lider (şapkalı 
 
 ## 5. Sahne Sahne Üretim Planı ve Son Metinler
 
-### Gönderi 1 (şu an 3:4, olması gereken 4:5; balonlu) — eski karakterle
+### Gönderi 1 (3:4 kalacak; balonlu) — eski karakterle
 | Sayfa | Sol balon | Sağ balon |
 |---|---|---|
 | 1 | 1 hafta önce 100$'dı, şimdi sadece 60$! | Önce yüksek fiyatı gösterirler. Böylece 60$ sana daha uygun gelir. |
@@ -116,7 +116,7 @@ Her sayfa iki panel: üst = patron (sert patron kadın), alt = lider (şapkalı 
 
 Sahne içi yazılar (görselde, yapay zekâdan gelen): fiyat etiketleri `100$ → 60$`, laptop `139.99$`, "Sepete Ekle" (2. sayfa), 3. sayfa ekranı "Ücretsiz kargo için 15$ ekle" / kargo 5$, 4. sayfa tabelalar "3 ADET 24$" / "1 ADET 10$", 6. sayfa mor düğme "En Çok Satanlar". Bunlar görselde rakamdan sonra `$` olacak şekilde düzeltildi.
 
-### Gönderi 2 (şu an 3:4, olması gereken 4:5; balonlu) — yeni karakterle, referans 2. gönderi görselleri
+### Gönderi 2 (3:4 kalacak; balonlu) — yeni karakterle, referans 2. gönderi görselleri
 | Sayfa | Sol balon | Sağ balon |
 |---|---|---|
 | 1 (sinema) | Patlamış mısır neden bu kadar pahalı? | Film stüdyoları bilet gelirinden pay alır. Sinema, patlamış mısır gibi ürünlerin satışından daha fazla kazanır. |
@@ -166,8 +166,8 @@ Diyetisyen-Web/
     ├── index.html, style.css, script.js, images/             ← ilk açılan BOŞ web sitesi iskeleti (koyu tema). Şu an kullanılmıyor [BELİRSİZ: web sitesi yapılacak mı]
     ├── tools/                                                ← yazı ekleme betikleri (aşağıya bak)
     └── images/
-        ├── post1/yazili/ sayfa1..7.jpg   (3:4 — yanlış oran)   |  post1/yazisiz/ sayfa1..7.jpg
-        ├── post2/yazili/ sayfa1..5.jpg   (3:4, yanlış oran)   |  post2/yazisiz/ sayfa1..5.jpg
+        ├── post1/yazili/ sayfa1..7.jpg   (3:4, düzeltilmeyecek)   |  post1/yazisiz/ sayfa1..7.jpg
+        ├── post2/yazili/ sayfa1..5.jpg   (3:4, düzeltilmeyecek)   |  post2/yazisiz/ sayfa1..5.jpg
         ├── post3/yazili/ sayfa1,2,3,4,5,7.jpg (4:5) | post3/yazisiz/ sayfa1,2,3,4,5,7.jpg
         └── post4/yazili/ sayfa1..6.jpg   (4:5)   |  post4/yazisiz/ sayfa1..6.jpg
 ```
@@ -186,7 +186,7 @@ Hepsi Python 3 + Pillow, `python3 -I betik.py` ile çalışır. Yazısız görse
 
 ## 7. Teknik Bilgiler (Higgsfield ve Ortam)
 
-- **Araç:** Higgsfield MCP (`mcp__Higgsfield__generate_image`, `generate_image_batch`, `jobs_wait`, `show_generation_by_ids`, `media_upload`, `media_confirm`). Model: `gpt_image_2_6`, kalite `high`, çözünürlük `2k`, oran **her zaman `4:5`** (post 1–2 eski üretimler yanlışlıkla `3:4` idi).
+- **Araç:** Higgsfield MCP (`mcp__Higgsfield__generate_image`, `generate_image_batch`, `jobs_wait`, `show_generation_by_ids`, `media_upload`, `media_confirm`). Model: `gpt_image_2_6`, kalite `high`, çözünürlük `2k`, oran yeni üretimlerde **`4:5`** (post 1–2 eski üretimler `3:4`, değiştirilmeyecek).
 - **Maliyet:** Görsel başı yaklaşık 2 kredi. Başlangıçta bakiye 438.9 kredi idi; **güncel bakiye bilinmiyor** **[BELİRSİZ]**. Üretimden önce maliyet söylemeyi bazı sahnelerde atladım; kullanıcıya hatırlatmak iyi olur.
 - **Aynı anda en fazla 4 iş** gönderilebiliyor (limit aşılırsa `submission_failed`).
 - **Referans yükleme akışı:** `media_upload` → URL'ye `curl -X PUT -H "Content-Type: image/jpeg" -H "If-None-Match: *" --data-binary @dosya` → `media_confirm`. Referans görselleri üretim isteminde `image_references` ile verilir; önceki üretimin job ID'si de referans olabilir (stil/renk tutarlılığı için).
@@ -220,7 +220,7 @@ Hepsi Python 3 + Pillow, `python3 -I betik.py` ile çalışır. Yazısız görse
 
 - **Gönderi 3, 6. sayfa:** Kullanıcı **bilerek atladı**. Üretilmeyecek, eksik sayılmaz.
 - **Gönderi 1 eski karakterle kalacak:** Kullanıcı kararı, yeniden üretilmeyecek.
-- **Oran düzeltmesi bekliyor:** Gönderi 1 ve 2 görselleri 3:4, olması gereken 4:5. Nasıl çevrileceği (yeniden üretim mi, kırpma mı) **kullanıcıya sorulmadı/karara bağlanmadı**; kullanıcı henüz "çevir" demedi **[BELİRSİZ]**.
+- **Gönderi 1 ve 2 boyutu (3:4):** Kullanıcı kararı, **düzeltilmeyecek.** Bekleyen iş değil.
 - Ufak bilinen kusurlar, kullanıcı şikâyet etmediği için **düzeltilmedi**: G2 s3 laptop ekranında "3,250" (virgül, referansta nokta); G2 s4 telefon ekranında küçük "19:24" saat; yeşil eşofman koyu yeşil çıktı (G3 s5); G3 s7 alt panelde yazılar vücut/paltonun üstüne biniyor (karartma ile okunur).
 - İlk kurulan `dark-money/` web sitesi iskeleti boş, kullanılmıyor. Web sitesi yapılıp yapılmayacağı **belirsiz**.
 - **Hashtag, paylaşım takvimi ve referans hesabın büyüme analizi (kaç günde bir paylaşım, hangi ayda açıldı, 11 bin takipçiye nasıl ulaştı):** Kullanıcı bunları **Claude Code'dan değil, elle kendisi yapıyor** (sohbet dolduğu için). Claude Code'da bu işler **yapılmayacak ve beklenmiyor**. Kullanıcı açıkça isterse tekrar konuşulur.
@@ -238,7 +238,7 @@ Hepsi Python 3 + Pillow, `python3 -I betik.py` ile çalışır. Yazısız görse
 ## 12. Geçersiz Kılınan / Artık Yapılmayacak Kararlar
 
 - Eski karakter (çilli, gözlüksüz) → artık yeni karakter kullanılıyor. Gönderi 1 eski karakterle **kalır** (yeniden üretilmeyecek).
-- 3:4 oran → artık **4:5** (Dark Money referans oranı). Gönderi 1–2 eski oranda kaldı, düzeltme bekliyor.
+- 3:4 oran → yeni üretimlerde **4:5** (Dark Money referans oranı). Gönderi 1–2 eski oranda **kalacak**, düzeltilmeyecek.
 - "Gönderi 3'ün 6. sayfası eksik" düşüncesi → bilerek atlandı, eksik değil.
 - "Referans hesap analizi / hashtag / takvim bu projede yapılacak" → kullanıcı elle yapıyor, Claude Code'da yapılmayacak.
 - Metinde "dolar" kelimesi ve `$100` biçimi → artık `100$`.
@@ -250,9 +250,9 @@ Hepsi Python 3 + Pillow, `python3 -I betik.py` ile çalışır. Yazısız görse
 ## 13. Bundan Sonraki Yapılacak İşler
 
 1. **Yeni gönderi referansları** geldikçe (kullanıcı gönderecek) Bölüm 8 iş akışını uygula. **Her zaman 4:5 üret.**
-2. **Gönderi 1 ve 2'yi 4:5'e çevirme:** Kullanıcı isterse yapılır. Önce yöntemi sor: yeniden üretim (kredi harcar, her sayfa ~2 kredi) ya da üst/alt kırpma (hızlı ama balon ve sahneyi kesebilir).
+2. Gönderi 1 ve 2'nin boyutuna dokunma (3:4 kalacak).
 3. Kullanıcı isterse: PR açma (**açıkça istemedikçe açma**), caption yazımı.
-4. Yapılmayacaklar: Gönderi 3'ün 6. sayfası, Gönderi 1'in yeni karakterle yeniden üretimi, hashtag/takvim/büyüme analizi (kullanıcı elle yapıyor).
+4. Yapılmayacaklar: Gönderi 3'ün 6. sayfası, Gönderi 1'in yeni karakterle yeniden üretimi, Gönderi 1–2 boyut düzeltmesi, hashtag/takvim/büyüme analizi (kullanıcı elle yapıyor).
 
 ## 14. Çalışma Kuralları (kullanıcı tercihleri)
 
