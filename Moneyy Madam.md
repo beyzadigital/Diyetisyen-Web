@@ -110,7 +110,7 @@ Her sayfa iki panel: üst = patron (sert patron kadın), alt = lider (şapkalı 
 | 2 | Son 2 ürün kalmış! Hemen almalıyım. | Bu mesaj kaçırma korkusu yaratır. Başka fiyatlara bakamadan aceleyle almana neden olur. |
 | 3 | Ücretsiz kargo için 15$ daha eklemem lazım. | 5$ kargo ödememek için 15$'lık fazladan ürün alıyorsun. Tasarruf ettiğini sanırken daha çok harcıyorsun. |
 | 4 | 3 tanesi 24$. Bu çok iyi bir fırsat! | Tanesi ucuz ama daha çok alıyorsun. Tek ürün yeterliyken 14$ fazladan ödüyorsun. |
-| 5 | Büyük boy sadece 2$ fazla. | Buna “üst satış” denir. Biraz daha fazla öde, daha büyüğünü al der. Sen de alırsın. (Tabela: BÜYÜK BOY AL, SADECE +2$ FARKLA) |
+| 5 | Büyük boy sadece 2$ fazla. | Buna “avantajlı ürün” denir. Biraz daha fazla öde, daha büyüğünü al der. Sen de alırsın. (Tabela: BÜYÜK BOY AL, SADECE +2$ FARKLA) |
 | 6 | Herkes bunu alıyor, iyidir herhalde. | Mağazalar, seni ikna etmek için yorumları ve satış sayılarını gösterir. Başkalarının aldığını görmek, senin de almanı kolaylaştırır. |
 | 7 | Ben tasarruf ettiğimi sanmıştım. | Ne kadar harcadığına da bak. **@moneyymadam** hesabını takip et, şirketlerin seni nasıl daha çok almaya ittiğini öğren. |
 
@@ -233,7 +233,8 @@ Hepsi Python 3 + Pillow, `python3 -I betik.py` ile çalışır. Yazısız görse
 - 2. gönderi: karakter güncellendi (gözlük, röfle, ben). "Jilet" yerine ağda ürünleri. Kumanda ve fazla el silindi. Telefon ekranı yandan, "Sponsorlu", pembe topuklu.
 - 3. gönderi: önce amber ton + mor omuz çantası (sırt çantası değil); sonra kullanıcı çevrenin karartılmasını istedi (referanstaki gibi). Sayfa 3–4 üst panel beyaz gömlek + lacivert blazer. Sayfa 5 üst obez, alt yeşil eşofman.
 - 4. gönderi: karartma **yok**; boş yazı kutuları **silindi**; son sayfada adam yerine şapkalı kadın.
-- Son: hesap adı tüm CTA'lara eklendi.
+- Hesap adı tüm CTA'lara eklendi.
+- **Gönderi 1, sayfa 5 sağ balon:** “üst satış” ifadesi **kaldırıldı**, yerine **“avantajlı ürün”** yazıldı (kullanıcı kararı). Betik `dark-money/tools/post1_yazi_ekle.py` güncellendi.
 
 ## 12. Geçersiz Kılınan / Artık Yapılmayacak Kararlar
 

@@ -18,7 +18,7 @@ SLIDES = {
     4: [((95, 130, 640, 450), "3 tanesi 24$. Bu çok iyi bir fırsat!"),
         ((800, 120, 1395, 465), "Tanesi ucuz ama daha çok alıyorsun. Tek ürün yeterliyken 14$ fazladan ödüyorsun.")],
     5: [((90, 110, 625, 370), "Büyük boy sadece 2$ fazla."),
-        ((775, 80, 1410, 430), "Buna “üst satış” denir. Biraz daha fazla öde, daha büyüğünü al der. Sen de alırsın.")],
+        ((800, 95, 1380, 420), "Buna “avantajlı ürün” denir. Biraz daha fazla öde, daha büyüğünü al der. Sen de alırsın.")],
     6: [((90, 95, 640, 400), "Herkes bunu alıyor, iyidir herhalde."),
         ((775, 70, 1410, 425), "Mağazalar, seni ikna etmek için yorumları ve satış sayılarını gösterir. Başkalarının aldığını görmek, senin de almanı kolaylaştırır.")],
     7: [((75, 110, 590, 370), "Ben tasarruf ettiğimi sanmıştım.")],
