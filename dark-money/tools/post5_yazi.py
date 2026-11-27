@@ -78,22 +78,26 @@ def text_block(im,lines,cy,cx=None):
             _,x,yy,t,fill,f=it; d.text((x,yy),t,font=f,fill=fill)
     return base.convert("RGB")
 
-def panel_caption(im,text,bottom,H,cx=None,wfrac=0.92,sizes=(0.031,0.029,0.027,0.025),maxlines=2):
+def panel_caption(im,text,bottom,H,cx=None,wfrac=0.92,sizes=(0.031,0.029,0.027,0.025),maxlines=2,cy=None):
     # önce en büyük punto ile en fazla 'maxlines' satıra sığdırmayı dener, olmazsa en küçük punto ile sığdırır
     W=im.size[0]; d=ImageDraw.Draw(im)
     for k,sz in enumerate(sizes):
         size=int(H*sz); f=ImageFont.truetype(FONT,size); ql=wrap(d,up(text),f,W*wfrac)
         if len(ql)<=maxlines: break
     h=len(ql)*int(size*1.2)
-    return text_block(im,[[(l,CREAM,size)] for l in ql],bottom-h/2-H*0.022,cx)
+    return text_block(im,[[(l,CREAM,size)] for l in ql],cy if cy is not None else bottom-h/2-H*0.022,cx)
 
 os.makedirs(OUT,exist_ok=True)
 for n in range(1,7):
     im=Image.open(f"{SRC}/sayfa{n}.jpg").convert("RGB"); W,H=im.size; dv=divider(im)
-    im=gradient(im,int(dv-H*0.17),dv-4,0.62); im=gradient(im,int(H-H*0.17),H,0.65)
+    im=gradient(im,int(dv-H*0.17),dv-4,0.62)
+    if n!=4: im=gradient(im,int(H-H*0.17),H,0.65)   # sayfa 4 alt panel: karartma yok
     top,bot=T[n]
     im=panel_caption(im,top,dv-4,H)
-    if n==6:
+    if n==4:
+        # alt panelde yazı, döngü şemasının hemen altına yaklaştırıldı
+        im=panel_caption(im,bot,H,H,cy=H*0.865)
+    elif n==6:
         # defterdeki yazılar görünür kalsın: alt yazı defterin sağındaki boş masa alanına yazılır
         im=panel_caption(im,bot,H,H,cx=W*0.745,wfrac=0.44,sizes=(0.0275,0.026,0.0245),maxlines=6)
     else:
