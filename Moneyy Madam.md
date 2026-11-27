@@ -1,7 +1,7 @@
 # Moneyy Madam — Proje Devam Notu
 
 Bu dosya, yeni bir Claude Code sohbetinde kaldığımız yerden devam etmek için yazıldı.
-Son güncelleme: 2026-11-27. Güvenilir olmayan ya da teyit edilmemiş bilgiler **[BELİRSİZ]** ile işaretlidir.
+Son güncelleme: 2026-11-27 (kullanıcı düzeltmeleri işlendi). Güvenilir olmayan ya da teyit edilmemiş bilgiler **[BELİRSİZ]** ile işaretlidir.
 
 ---
 
@@ -10,7 +10,7 @@ Son güncelleme: 2026-11-27. Güvenilir olmayan ya da teyit edilmemiş bilgiler 
 - Proje: Instagram için **kaydırmalı (carousel) gönderiler**. Para/işletme/kariyer konularında "gizli düzenleri" anlatan, çizgi film (2D illüstrasyon) tarzında görsel serisi.
 - Hesap adı: **@moneyymadam** (sayfa adı "Moneyy Madam"). Karar verildi, görsellere eklendi.
 - Referans (esinlendiğimiz) hesap: **@darkmoneyfilesai**. Aynı format, **kadın karakterlerle**, **Türkçe** metinle, **kendi amber renk paletimizle**.
-- Şimdiye kadar **4 gönderi** üretildi (toplam 24 görsel). Hepsi yazılı ve yazısız hâlleriyle depoda duruyor.
+- Şimdiye kadar **4 gönderi** üretildi (toplam 24 görsel). Hepsi yazılı ve yazısız hâlleriyle depoda duruyor. **Oran kuralı: her zaman 4:5** (Gönderi 1–2 yanlışlıkla 3:4 kaldı, düzeltme bekliyor).
 - Görsel üretim aracı: **Higgsfield** (model `gpt_image_2_6`). Yazılar yapay zekâyla değil, **Python/Pillow ile koda** eklenir (Türkçe harfler hatasız olsun diye).
 - Her görselin sırası: **önce sahne (yazısız, boş balonlu/boş alt kısımlı) üretilir → onaylanır → yazı en son eklenir.**
 
@@ -44,7 +44,7 @@ Konu: İndirim, kıtlık, ücretsiz kargo, paket fiyat, "üst satış", sosyal k
 1. Sinema (patlamış mısır pahalı) 2. Ağda bantları (set ucuz, yedek bant pahalı — referansta jilet vardı, bizde ağda rolonu ve bantlar) 3. Ücretsiz oyun (kıyafet/oyun parası satışı, laptopta kadın avatarlı moda oyunu) 4. Telefon ve reklam (sponsorlu pembe topuklu reklamı) 5. Son sahne / takip çağrısı (yağmurlu sokak, kitaplı şapkalı kadın).
 
 ### Gönderi 3 — "X yaşında …, Y yaşında başlar" zaman çizgisi (referansta 7 sayfa; bizde 6 sayfa üretildi)
-Her sayfa iki panel: üst panel = geleceğin sonucu, alt panel = başlangıç. Sayfa 1 yoksulluk, 2 pişmanlık, 3 liderlik, 4 servet, 5 obezite, 7 "takip ettiğin içerikler hayatına dönüşür". **6. sayfa üretilmedi** (kullanıcı referansını göndermedi).
+Her sayfa iki panel: üst panel = geleceğin sonucu, alt panel = başlangıç. Sayfa 1 yoksulluk, 2 pişmanlık, 3 liderlik, 4 servet, 5 obezite, 7 "takip ettiğin içerikler hayatına dönüşür". **6. sayfa kullanıcı tarafından bilerek atlandı, üretilmeyecek.**
 
 ### Gönderi 4 — Kötü patron / lider karşılaştırması (6 sayfa)
 Her sayfa iki panel: üst = patron (sert patron kadın), alt = lider (şapkalı kadın). Konular (cümlelerden çıkarılan, kullanıcı açıkça belirtmedi): hasta/izin, zam, hafta sonu iş, iş yığını, işten ayrılma **[BELİRSİZ: kullanıcının koyduğu resmî konu başlıkları]**. Son sayfa tek görsel + takip çağrısı.
@@ -77,7 +77,7 @@ Her sayfa iki panel: üst = patron (sert patron kadın), alt = lider (şapkalı 
 
 ### ESKİ karakter versiyonu (artık kullanılmıyor)
 - İlk karakter sayfası (medya ID `b881ec80-e00e-44ee-95a5-c0f7b1b8a840`): çillerli, **gözlüksüz**, benli olmayan ana kadın.
-- **Gönderi 1'in 1–7. sayfaları bu eski karakterle üretildi.** Kullanıcı "bu gönderiden itibaren yeni karakter" dedi; Gönderi 1'i yeni karakterle yeniden üretmeyi önerdim, **kullanıcı cevap vermedi** **[BELİRSİZ: yeniden üretilsin mi]**.
+- **Gönderi 1'in 1–7. sayfaları bu eski karakterle üretildi.** Kullanıcı kararı: **Gönderi 1 yeni karakterle YENİDEN ÜRETİLMEYECEK.** Aktif karakter, gözlüklü ve benli olan güncel karakter sayfasıdır (yukarıdaki ID). Bundan sonraki her üretimde bu karakter kullanılır.
 
 ---
 
@@ -87,10 +87,9 @@ Her sayfa iki panel: üst = patron (sert patron kadın), alt = lider (şapkalı 
 - **Renk paleti:** Sıcak **amber / altın-turuncu gün batımı** tonları (kullanıcının "sayfa rengimiz"). Referanslardaki koyu lacivert/gri gece görünümü **kullanılmaz**.
   - Gönderi 1, 2, 4: **karartma yok**, mekânlar aydınlık amber.
   - Gönderi 3: kullanıcı özellikle **mekânı ve diğer insanları karartıp**, kırmızılı kadını ve şapkalı kadını parlak bırakmamızı istedi (referanstaki gibi). Bu karartma **yalnızca Gönderi 3 için** geçerli. Gönderi 4 için kullanıcı açıkça "karartmayı unut" dedi.
-- **Boyutlar (gönderi başına sabit):**
-  - Gönderi 1 ve 2: **3:4**, 1744×2336 px.
-  - Gönderi 3 ve 4: **4:5**, 1792×2240 px.
-  - Instagram'da gönderi içinde oran karışmasın; kullanıcıya 1. ve 2. gönderiyi 4:5'e uyarlamayı önerdim, **cevap vermedi** **[BELİRSİZ]**.
+- **Boyut KURALI (kullanıcı kararı): her gönderi, Dark Money referans sayfasının gönderi oranında yapılır.** Referans ekran görüntüleri yaklaşık 1290×1600 px, yani **4:5**. Yeni her görsel **4:5 (1792×2240 px)** üretilir.
+  - Gönderi 3 ve 4: 4:5 (doğru).
+  - **Gönderi 1 ve 2: 3:4 (1744×2336 px) üretildi. Bu YANLIŞ oran.** Başta referans oranını kontrol etmeden 3:4 seçtim, sonradan düzeltmedim. Kullanıcı bunun 4:5 olması gerektiğini söyledi. **Bu iki gönderiyi 4:5'e çevirme işi henüz yapılmadı** (bkz. Bölüm 10, 13).
 - **Her görselde:** Her kadının tam **iki eli** olacak (fazla el/yanlış anatomi sorun çıkardı, düzeltildi).
 - **Görselin içinde yazılar:** Referanstaki İngilizce yazılar silinir. Gerekli sahne yazıları (etiket, ekran düğmesi, tabela) Türkçe ve kısa tutulur; sorun çıkarsa boş bırakılıp koda eklenir.
 - **Yazı kuralları (koddan eklenen):**
@@ -104,7 +103,7 @@ Her sayfa iki panel: üst = patron (sert patron kadın), alt = lider (şapkalı 
 
 ## 5. Sahne Sahne Üretim Planı ve Son Metinler
 
-### Gönderi 1 (3:4, balonlu) — eski karakterle
+### Gönderi 1 (şu an 3:4, olması gereken 4:5; balonlu) — eski karakterle
 | Sayfa | Sol balon | Sağ balon |
 |---|---|---|
 | 1 | 1 hafta önce 100$'dı, şimdi sadece 60$! | Önce yüksek fiyatı gösterirler. Böylece 60$ sana daha uygun gelir. |
@@ -117,7 +116,7 @@ Her sayfa iki panel: üst = patron (sert patron kadın), alt = lider (şapkalı 
 
 Sahne içi yazılar (görselde, yapay zekâdan gelen): fiyat etiketleri `100$ → 60$`, laptop `139.99$`, "Sepete Ekle" (2. sayfa), 3. sayfa ekranı "Ücretsiz kargo için 15$ ekle" / kargo 5$, 4. sayfa tabelalar "3 ADET 24$" / "1 ADET 10$", 6. sayfa mor düğme "En Çok Satanlar". Bunlar görselde rakamdan sonra `$` olacak şekilde düzeltildi.
 
-### Gönderi 2 (3:4, balonlu) — yeni karakterle, referans 2. gönderi görselleri
+### Gönderi 2 (şu an 3:4, olması gereken 4:5; balonlu) — yeni karakterle, referans 2. gönderi görselleri
 | Sayfa | Sol balon | Sağ balon |
 |---|---|---|
 | 1 (sinema) | Patlamış mısır neden bu kadar pahalı? | Film stüdyoları bilet gelirinden pay alır. Sinema, patlamış mısır gibi ürünlerin satışından daha fazla kazanır. |
@@ -128,7 +127,7 @@ Sahne içi yazılar (görselde, yapay zekâdan gelen): fiyat etiketleri `100$ �
 
 Sahne notları: 2. sayfada **jilet yok**, yerine ağda kutusu, rolon ve pembe bantlar. 3. sayfada **oyun kumandası ve fazla el kaldırıldı**, laptopta kadın avatarlı mor kıyafet oyunu ekranı. 4. sayfada pembe topuklu ayakkabı reklamı, telefon yandan görünür, ekranda **"Sponsorlu"** yazısı büyük (ekranda küçük bir saat "19:24" çıkmış, kaldırılmadı).
 
-### Gönderi 3 (4:5, iki panel, alt yazılı, **mekan karartmalı**) — sayfalar 1,2,3,4,5,7 üretildi
+### Gönderi 3 (4:5, iki panel, alt yazılı, **mekan karartmalı**) — sayfalar 1,2,3,4,5,7 (6. sayfa bilerek yok)
 | Sayfa | Üst yazı | Alt yazı | Sahne notu |
 |---|---|---|---|
 | 1 | 48 YAŞINDA YOKSULLUK, | 23 YAŞINDA BAŞLAR. | Yağmurlu sokak, mor omuz çantası (sırt çantası değil). Alt: barda gülen kadın |
@@ -136,7 +135,7 @@ Sahne notları: 2. sayfada **jilet yok**, yerine ağda kutusu, rolon ve pembe ba
 | 3 | 45 YAŞINDA LİDERLİK, | 22 YAŞINDA BAŞLAR. | Üst: beyaz gömlek + lacivert blazer, toplantı masası. Alt: bordo gömlek, flipchart sunumu |
 | 4 | 40 YAŞINDA SERVET, | 19 YAŞINDA BAŞLAR. | Üst: beyaz gömlek + lacivert blazer, ofis, laptop. Alt: bordo gömlek, dağınık odada laptop |
 | 5 | 52 YAŞINDA OBEZİTE, | 21 YAŞINDA BAŞLAR. | Üst: obez kadın muayene yatağında, doktor akciğer filmi. Alt: yeşil eşofmanla kanepede hamburger |
-| 6 | — **ÜRETİLMEDİ** | — | Referansı gelmedi |
+| 6 | — **bilerek atlandı** | — | Üretilmeyecek |
 | 7 | 25 YAŞINDA TAKİP ETTİĞİN İÇERİKLER... | 45 YAŞINDA HAYATINA DÖNÜŞÜR. / TAKİP ETTİKLERİNLE BAŞLA. / OKULDA SANA ÖĞRETİLMEYEN PARA DERSLERİ İÇİN / **@moneyymadam** / HESABINI TAKİP ET. | Balkon + oturma odası, telefon |
 
 Üst yazıların sonunda virgül, alt yazıların sonunda nokta var (referanstaki cümle iki panel boyunca devam eder). Kullanıcı nokta yazmıştı; ben virgül/nokta düzeni koydum. İtiraz gelmedi.
@@ -167,8 +166,8 @@ Diyetisyen-Web/
     ├── index.html, style.css, script.js, images/             ← ilk açılan BOŞ web sitesi iskeleti (koyu tema). Şu an kullanılmıyor [BELİRSİZ: web sitesi yapılacak mı]
     ├── tools/                                                ← yazı ekleme betikleri (aşağıya bak)
     └── images/
-        ├── post1/yazili/ sayfa1..7.jpg   (3:4)   |  post1/yazisiz/ sayfa1..7.jpg
-        ├── post2/yazili/ sayfa1..5.jpg   (3:4)   |  post2/yazisiz/ sayfa1..5.jpg
+        ├── post1/yazili/ sayfa1..7.jpg   (3:4 — yanlış oran)   |  post1/yazisiz/ sayfa1..7.jpg
+        ├── post2/yazili/ sayfa1..5.jpg   (3:4, yanlış oran)   |  post2/yazisiz/ sayfa1..5.jpg
         ├── post3/yazili/ sayfa1,2,3,4,5,7.jpg (4:5) | post3/yazisiz/ sayfa1,2,3,4,5,7.jpg
         └── post4/yazili/ sayfa1..6.jpg   (4:5)   |  post4/yazisiz/ sayfa1..6.jpg
 ```
@@ -187,7 +186,7 @@ Hepsi Python 3 + Pillow, `python3 -I betik.py` ile çalışır. Yazısız görse
 
 ## 7. Teknik Bilgiler (Higgsfield ve Ortam)
 
-- **Araç:** Higgsfield MCP (`mcp__Higgsfield__generate_image`, `generate_image_batch`, `jobs_wait`, `show_generation_by_ids`, `media_upload`, `media_confirm`). Model: `gpt_image_2_6`, kalite `high`, çözünürlük `2k`, oran `3:4` (post 1–2) veya `4:5` (post 3–4).
+- **Araç:** Higgsfield MCP (`mcp__Higgsfield__generate_image`, `generate_image_batch`, `jobs_wait`, `show_generation_by_ids`, `media_upload`, `media_confirm`). Model: `gpt_image_2_6`, kalite `high`, çözünürlük `2k`, oran **her zaman `4:5`** (post 1–2 eski üretimler yanlışlıkla `3:4` idi).
 - **Maliyet:** Görsel başı yaklaşık 2 kredi. Başlangıçta bakiye 438.9 kredi idi; **güncel bakiye bilinmiyor** **[BELİRSİZ]**. Üretimden önce maliyet söylemeyi bazı sahnelerde atladım; kullanıcıya hatırlatmak iyi olur.
 - **Aynı anda en fazla 4 iş** gönderilebiliyor (limit aşılırsa `submission_failed`).
 - **Referans yükleme akışı:** `media_upload` → URL'ye `curl -X PUT -H "Content-Type: image/jpeg" -H "If-None-Match: *" --data-binary @dosya` → `media_confirm`. Referans görselleri üretim isteminde `image_references` ile verilir; önceki üretimin job ID'si de referans olabilir (stil/renk tutarlılığı için).
@@ -219,12 +218,13 @@ Hepsi Python 3 + Pillow, `python3 -I betik.py` ile çalışır. Yazısız görse
 
 ## 10. Tamamlanmamış İşler / Mevcut Durum
 
-- **Gönderi 3, 6. sayfa yok.** Referansı gönderilmedi.
-- **Gönderi 1 eski karakterle** (gözlüksüz, çilli). Yeni karakterle yeniden üretilsin mi? **Cevap yok.**
-- **Oran tutarsızlığı:** Gönderi 1–2 = 3:4, Gönderi 3–4 = 4:5. Birleştirilsin mi? **Cevap yok.**
+- **Gönderi 3, 6. sayfa:** Kullanıcı **bilerek atladı**. Üretilmeyecek, eksik sayılmaz.
+- **Gönderi 1 eski karakterle kalacak:** Kullanıcı kararı, yeniden üretilmeyecek.
+- **Oran düzeltmesi bekliyor:** Gönderi 1 ve 2 görselleri 3:4, olması gereken 4:5. Nasıl çevrileceği (yeniden üretim mi, kırpma mı) **kullanıcıya sorulmadı/karara bağlanmadı**; kullanıcı henüz "çevir" demedi **[BELİRSİZ]**.
 - Ufak bilinen kusurlar, kullanıcı şikâyet etmediği için **düzeltilmedi**: G2 s3 laptop ekranında "3,250" (virgül, referansta nokta); G2 s4 telefon ekranında küçük "19:24" saat; yeşil eşofman koyu yeşil çıktı (G3 s5); G3 s7 alt panelde yazılar vücut/paltonun üstüne biniyor (karartma ile okunur).
 - İlk kurulan `dark-money/` web sitesi iskeleti boş, kullanılmıyor. Web sitesi yapılıp yapılmayacağı **belirsiz**.
-- Gönderi açıklamaları (caption), hashtag, yayın takvimi, paylaşım sıklığı vb. **hiç yapılmadı**. Referans hesabın (kaç günde bir paylaşım, hangi ayda açıldı, 11 bin takipçiye nasıl ulaştı) **analizi yapılmadı**; Instagram'a erişim olmadığı için kullanıcıdan ekran görüntüsü/tarih istedim, **gelmedi**.
+- **Hashtag, paylaşım takvimi ve referans hesabın büyüme analizi (kaç günde bir paylaşım, hangi ayda açıldı, 11 bin takipçiye nasıl ulaştı):** Kullanıcı bunları **Claude Code'dan değil, elle kendisi yapıyor** (sohbet dolduğu için). Claude Code'da bu işler **yapılmayacak ve beklenmiyor**. Kullanıcı açıkça isterse tekrar konuşulur.
+- Gönderi açıklaması (caption) konusu kullanıcıyla netleştirilmedi **[BELİRSİZ: caption'ı kim yazıyor]**.
 
 ## 11. Son Yapılan Revizeler (kronolojik, en yenisi sonda)
 
@@ -237,7 +237,10 @@ Hepsi Python 3 + Pillow, `python3 -I betik.py` ile çalışır. Yazısız görse
 
 ## 12. Geçersiz Kılınan / Artık Yapılmayacak Kararlar
 
-- Eski karakter (çilli, gözlüksüz) → artık yeni karakter kullanılıyor (G1 hariç, bekleyen karar).
+- Eski karakter (çilli, gözlüksüz) → artık yeni karakter kullanılıyor. Gönderi 1 eski karakterle **kalır** (yeniden üretilmeyecek).
+- 3:4 oran → artık **4:5** (Dark Money referans oranı). Gönderi 1–2 eski oranda kaldı, düzeltme bekliyor.
+- "Gönderi 3'ün 6. sayfası eksik" düşüncesi → bilerek atlandı, eksik değil.
+- "Referans hesap analizi / hashtag / takvim bu projede yapılacak" → kullanıcı elle yapıyor, Claude Code'da yapılmayacak.
 - Metinde "dolar" kelimesi ve `$100` biçimi → artık `100$`.
 - Hesap adı yer tutucuları ("[HESAP ADI]", boş balon) → artık **@moneyymadam**.
 - Sepete Ekle düğmesi 6. sayfada → mor **"En Çok Satanlar"** düğmesi, alt ortada.
@@ -246,16 +249,15 @@ Hepsi Python 3 + Pillow, `python3 -I betik.py` ile çalışır. Yazısız görse
 
 ## 13. Bundan Sonraki Yapılacak İşler
 
-1. Kullanıcıdan **3. gönderinin 6. sayfa referansını** iste, üret, yazılı hâlini ekle.
-2. **Yeni gönderi referansları** geldikçe (kullanıcı gönderecek) Bölüm 8 iş akışını uygula.
-3. Kullanıcıya sor: Gönderi 1'i yeni karakterle yeniden üretelim mi? Oranlar birleştirilsin mi?
-4. Gönderi açıklamaları (caption) ve hashtag yazımı, istenirse.
-5. Referans hesap analizi (paylaşım sıklığı, ilk aylar) için kullanıcıdan veri iste. Yoksa analiz yapma.
-6. İstenirse: PR açma (**kullanıcı açıkça isteyene kadar açma**), web sitesi iskeletini kullanma/silme kararı.
+1. **Yeni gönderi referansları** geldikçe (kullanıcı gönderecek) Bölüm 8 iş akışını uygula. **Her zaman 4:5 üret.**
+2. **Gönderi 1 ve 2'yi 4:5'e çevirme:** Kullanıcı isterse yapılır. Önce yöntemi sor: yeniden üretim (kredi harcar, her sayfa ~2 kredi) ya da üst/alt kırpma (hızlı ama balon ve sahneyi kesebilir).
+3. Kullanıcı isterse: PR açma (**açıkça istemedikçe açma**), caption yazımı.
+4. Yapılmayacaklar: Gönderi 3'ün 6. sayfası, Gönderi 1'in yeni karakterle yeniden üretimi, hashtag/takvim/büyüme analizi (kullanıcı elle yapıyor).
 
 ## 14. Çalışma Kuralları (kullanıcı tercihleri)
 
 - **Önce sahne, yazı en son.** Yazıyı kullanıcıyla birlikte çevirip değiştirdikten sonra ekle.
+- **Oranı varsayma:** Her görsel Dark Money referans gönderisinin oranında (4:5) üretilir. Referansın oranını kontrol et.
 - Üretim öncesi gerekli belirsizlik varsa kısa sor; kullanıcı "üret/başla" demeden pahalı toplu üretim yapma.
 - Her görseli üretince **indirip kontrol et** ve ne gördüğünü dürüstçe söyle; doğrulayamadığını doğrulanmış gibi sunma.
 - Kullanıcıya her görseli **buradan (sohbetten)** gönder; ayrıca depoya kaydet ve push et.
