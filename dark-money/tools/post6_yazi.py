@@ -64,7 +64,7 @@ def draw_rich(im,lines,cy,gap=1.2):
     hs=[max(s for _,_,s in ln) for ln in lines]; total=sum(int(h*gap) for h in hs); y=cy-total/2; items=[]
     for ln,h in zip(lines,hs):
         ws=[m.textlength(t,font=ImageFont.truetype(FONT,s)) for t,_,s in ln]; x=(W-sum(ws))/2
-        for (t,c,s),w in zip(ln,ws): items.append((x,y+(h-s)*0.6,t,c,ImageFont.truetype(FONT,s))); x+=w
+        for (t,c,s),w in zip(ln,ws): items.append((x,y+(h-s)*0.95,t,c,ImageFont.truetype(FONT,s))); x+=w
         y+=int(h*gap)
     sh=Image.new("RGBA",im.size,(0,0,0,0)); sd=ImageDraw.Draw(sh)
     for x,yy,t,c,f in items: sd.text((x,yy),t,font=f,fill=(0,0,0,255),stroke_width=max(5,f.size//9),stroke_fill=(0,0,0,255))
@@ -93,13 +93,10 @@ P2_pre=up("Yüzünü göstermeden kendi karakterini oluşturmak için").split()
 w1=[[(w,CREAM,S)] for w in P1]
 L1=rich_wrap(w1,W*0.88,m)
 L2=rich_wrap([[(w,CREAM,S2)] for w in P2_pre],W*0.90,m)
-# son satır: tek satırda  @moneyymadam’ı TAKİP ET VE YORUMA KARAKTER(altın) YAZ.
-S3=int(S*1.15)
-while True:
-    last=[("@moneyymadam",GOLD,S3),("’ı",CREAM,S3),(" "+up("takip et ve yoruma")+" ",CREAM,S3),("KARAKTER",GOLD,S3),(" YAZ.",CREAM,S3)]
-    if sum(m.textlength(t,font=ImageFont.truetype(FONT,sz)) for t,_,sz in last)<=W*0.95: break
-    S3-=1
-print("son satır puntosu:",S3,"/",S)
-lines=L1+[[("",CREAM,int(S*0.55))]]+L2+[[("",CREAM,int(S*0.35))]]+[last]
-im=draw_rich(im,lines,H*0.815)
+# çağrı: iki satır; sarı yazılar (hesap adı ve KARAKTER) daha büyük
+SG=int(S2*1.28)
+cta1=[("@moneyymadam",GOLD,SG),("’ı "+up("takip et"),CREAM,S2)]
+cta2=[(up("ve yoruma")+" ",CREAM,S2),("KARAKTER",GOLD,SG),(" YAZ.",CREAM,S2)]
+lines=L1+[[("",CREAM,int(S*0.55))]]+L2+[[("",CREAM,int(S*0.45))]]+[cta1,cta2]
+im=draw_rich(im,lines,H*0.785)
 im.save(f"{OUT}/sayfa6.jpg",quality=92); print("ok sayfa 6, satır:",len(lines))
