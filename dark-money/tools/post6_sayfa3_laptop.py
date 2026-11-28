@@ -3,7 +3,7 @@ paltolu kadının önden / çapraz / yandan / arkadan boy görünümleri eklenir
 Girdi : post6/yazisiz/kaynak/sayfa3_ilk.jpg + karakter haritası PNG   Çıktı: post6/yazisiz/sayfa3.jpg
 """
 import numpy as np
-from PIL import Image, ImageDraw, ImageChops, ImageFilter
+from PIL import Image, ImageDraw, ImageChops, ImageFilter, ImageFont
 R="/home/user/Diyetisyen-Web/dark-money/images/post6/yazisiz/"
 BASE=R+"kaynak/sayfa3_ilk.jpg"; OUT=R+"sayfa3.jpg"
 SHEET=R+"kaynak/karakter_haritasi.png"
@@ -51,6 +51,15 @@ t=ImageChops.multiply(t,Image.new("RGB",t.size,CARD))
 ch=t.size[1]+30; cy0=(FH-ch)//2; cx0=2*GAP+CW
 d.rounded_rectangle([cx0,cy0,cx0+CW,cy0+ch],10,fill=CARD,outline=EDGE,width=3)
 canvas.paste(t,(cx0+12,cy0+15))
+
+# ekran başlığı
+TITLE="AI ile kendi karakterini oluştur"
+tf=ImageFont.truetype("/usr/share/fonts/opentype/inter/Inter-Bold.otf",62)
+while d.textlength(TITLE,font=tf)>FW*0.9: tf=ImageFont.truetype("/usr/share/fonts/opentype/inter/Inter-Bold.otf",tf.size-2)
+top_card=min(py,cy0)
+d.text((FW/2,top_card/2),TITLE,font=tf,fill=(44,36,32),anchor="mm")
+
+canvas=ImageChops.offset(canvas,0,46)   # başlık + kartlar bloğunu dikeyde ortala
 
 # 3) tekrar eğimle ekrana yerleştir
 dq=expand(QUAD,2.5)
