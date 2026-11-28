@@ -88,17 +88,18 @@ def rich_wrap(words,mw,m):
     return lines
 im=Image.open(f"{SRC}/sayfa6.jpg").convert("RGB"); W,H=im.size; S=int(H*0.0265); m=ImageDraw.Draw(im)
 P1="Çoğu insan, yüzünü göstermeden de içerik üretebileceğini geç fark ediyor.".split()
-P2_pre=up("Sen de yüzünü göstermeden kendi karakterini oluşturmayı öğrenmek için").split()
+S2=int(S*1.2)
+P2_pre=up("Yüzünü göstermeden kendi karakterini oluşturmak için").split()
 w1=[[(w,CREAM,S)] for w in P1]
 L1=rich_wrap(w1,W*0.88,m)
-L2=rich_wrap([[(w,CREAM,S)] for w in P2_pre],W*0.88,m)
+L2=rich_wrap([[(w,CREAM,S2)] for w in P2_pre],W*0.90,m)
 # son satır: tek satırda  @moneyymadam’ı TAKİP ET VE YORUMA KARAKTER(altın) YAZ.
-S3=S
+S3=int(S*1.15)
 while True:
     last=[("@moneyymadam",GOLD,S3),("’ı",CREAM,S3),(" "+up("takip et ve yoruma")+" ",CREAM,S3),("KARAKTER",GOLD,S3),(" YAZ.",CREAM,S3)]
-    if sum(m.textlength(t,font=ImageFont.truetype(FONT,sz)) for t,_,sz in last)<=W*0.92: break
+    if sum(m.textlength(t,font=ImageFont.truetype(FONT,sz)) for t,_,sz in last)<=W*0.95: break
     S3-=1
 print("son satır puntosu:",S3,"/",S)
-lines=L1+[[("",CREAM,int(S*0.55))]]+L2+[last]
+lines=L1+[[("",CREAM,int(S*0.55))]]+L2+[[("",CREAM,int(S*0.35))]]+[last]
 im=draw_rich(im,lines,H*0.815)
 im.save(f"{OUT}/sayfa6.jpg",quality=92); print("ok sayfa 6, satır:",len(lines))
