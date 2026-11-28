@@ -61,6 +61,30 @@ d.text((FW/2,top_card/2),TITLE,font=tf,fill=(44,36,32),anchor="mm")
 
 canvas=ImageChops.offset(canvas,0,46)   # başlık + kartlar bloğunu dikeyde ortala
 
+# ---- uygulama penceresi çubuğu: sekme + yeni sekme + küçült / büyüt / kapat
+canvas=canvas.copy(); w=ImageDraw.Draw(canvas)
+HB=76; BARC=tuple(int(c*0.86) for c in paper); INK2=(52,44,40)
+w.rectangle([0,0,FW,HB],fill=BARC)
+w.line([(0,HB),(FW,HB)],fill=EDGE,width=2)
+# açık sekme (üstü yuvarlak, içeriğe bitişik)
+w.rounded_rectangle([26,16,372,HB+14],16,fill=paper,outline=EDGE,width=2)
+w.rectangle([28,HB-2,370,HB+10],fill=paper)
+# sekme ikonu: dört köşeli parıltı
+cx_,cy_=64,46
+for dx,dy in ((0,-13),(13,0),(0,13),(-13,0)): w.line([(cx_,cy_),(cx_+dx,cy_+dy)],fill=INK2,width=4)
+w.polygon([(cx_,cy_-14),(cx_+4,cy_-4),(cx_+14,cy_),(cx_+4,cy_+4),(cx_,cy_+14),(cx_-4,cy_+4),(cx_-14,cy_),(cx_-4,cy_-4)],fill=INK2)
+tf2=ImageFont.truetype("/usr/share/fonts/opentype/inter/Inter-SemiBold.otf",25)
+w.text((98,46),"Karakter Oluştur",font=tf2,fill=INK2,anchor="lm")
+# sekme kapat (küçük x)
+for o in ((-7,-7,7,7),(-7,7,7,-7)): w.line([(346+o[0],46+o[1]),(346+o[2],46+o[3])],fill=(120,108,100),width=3)
+# yeni sekme +
+w.line([(412,46),(432,46)],fill=INK2,width=4); w.line([(422,36),(422,56)],fill=INK2,width=4)
+# pencere denetimleri (sağ üst)
+w.line([(FW-182,46),(FW-158,46)],fill=INK2,width=4)                                 # küçült
+w.rectangle([FW-122,34,FW-98,58],outline=INK2,width=4)                              # büyüt
+w.ellipse([FW-78,22,FW-22,70],fill=(214,64,58))                                     # kapat
+for o in ((-8,-8,8,8),(-8,8,8,-8)): w.line([(FW-50+o[0],46+o[1]),(FW-50+o[2],46+o[3])],fill=(255,255,255),width=5)
+
 # 3) tekrar eğimle ekrana yerleştir
 dq=expand(QUAD,2.5)
 layer=canvas.transform(base.size,Image.PERSPECTIVE,coeffs(dq,rect),Image.BICUBIC)
