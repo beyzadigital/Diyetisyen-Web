@@ -35,7 +35,7 @@ ys,xs=np.where(diff); bx=(max(0,xs.min()-6),max(0,ys.min()-6),min(FW,xs.max()+6)
 portrait=flat.crop(bx)
 
 # 2) yeni düz ekran: sol portre kartı, sağ karakter haritası kartı
-BG=paper; CARD=(252,250,247); EDGE=tuple(int(c*0.62) for c in paper)
+BG=(255,255,255); CARD=(252,250,247); EDGE=(206,198,190)
 canvas=Image.new("RGB",(FW,FH),BG); d=ImageDraw.Draw(canvas)
 GAP=22; CW=(FW-3*GAP)//2
 # portre kartı
@@ -63,12 +63,12 @@ canvas=ImageChops.offset(canvas,0,46)   # başlık + kartlar bloğunu dikeyde or
 
 # ---- uygulama penceresi çubuğu: sekme + yeni sekme + küçült / büyüt / kapat
 canvas=canvas.copy(); w=ImageDraw.Draw(canvas)
-HB=76; BARC=tuple(int(c*0.86) for c in paper); INK2=(52,44,40)
+HB=76; BARC=(246,166,35); AMB_D=(196,112,8); INK2=(52,44,40)
 w.rectangle([0,0,FW,HB],fill=BARC)
-w.line([(0,HB),(FW,HB)],fill=EDGE,width=2)
+w.line([(0,HB),(FW,HB)],fill=AMB_D,width=2)
 # açık sekme (üstü yuvarlak, içeriğe bitişik)
-w.rounded_rectangle([26,16,372,HB+14],16,fill=paper,outline=EDGE,width=2)
-w.rectangle([28,HB-2,370,HB+10],fill=paper)
+w.rounded_rectangle([26,16,372,HB+14],16,fill=(255,255,255),outline=AMB_D,width=2)
+w.rectangle([28,HB-2,370,HB+10],fill=(255,255,255))
 # sekme ikonu: dört köşeli parıltı
 cx_,cy_=64,46
 for dx,dy in ((0,-13),(13,0),(0,13),(-13,0)): w.line([(cx_,cy_),(cx_+dx,cy_+dy)],fill=INK2,width=4)
