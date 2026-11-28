@@ -11,7 +11,7 @@ OUT="/home/user/Diyetisyen-Web/dark-money/images/post6/yazili"
 CREAM=(255,247,232); GOLD=(240,196,104)
 TOP="Influencer"; BOT="Yüzünü göstermeyen"
 def up(s): return s.replace("i","İ").replace("ı","I").upper()
-T={1:("“Para için yüzünü göstermen şart mı?”","“Hayır, yüzümü göstermeden sayfamı kuruyorum.”"),
+T={1:("“Para için yüzümü göstermem şart mı?”","“Hayır, yüzümü göstermeden sayfamı kuruyorum.”"),
    2:("“Kameraya çıkacağım, önce saçım!”","“Ben görünmeyeceğim, önce fikrim.”"),
    3:("“Yüzüm yorgun çıktı, baştan!”","“Karakterimi yapay zekâyla çizdiriyorum.”"),
    5:("“Dışarı çıkıyorum, herkes bana bakıyor.”","“Kimse beni tanımıyor, rahatça dolaşıyorum.”")}
