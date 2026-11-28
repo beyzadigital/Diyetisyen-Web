@@ -56,3 +56,43 @@ for n,((q1),(q2)) in [(k,(v[0],v[1])) for k,v in T.items()]:
     im=panel_caption(im,TOP,q1,dv-4,H); im=panel_caption(im,BOT,q2,H,H)
     im.save(f"{OUT}/sayfa{n}.jpg",quality=92)
     print("ok sayfa",n,"ayırıcı y=",dv)
+
+# ---- SON SLAYT (6): CTA — ilk cümle normal harf, ikinci cümle büyük harf, hesap adı altın
+def draw_rich(im,lines,cy,gap=1.2):
+    # lines: [[(metin,renk,boyut), ...], ...]  her satır ortalanır, parçalar yan yana
+    W=im.size[0]; base=im.convert("RGBA"); m=ImageDraw.Draw(base)
+    hs=[max(s for _,_,s in ln) for ln in lines]; total=sum(int(h*gap) for h in hs); y=cy-total/2; items=[]
+    for ln,h in zip(lines,hs):
+        ws=[m.textlength(t,font=ImageFont.truetype(FONT,s)) for t,_,s in ln]; x=(W-sum(ws))/2
+        for (t,c,s),w in zip(ln,ws): items.append((x,y+(h-s)*0.6,t,c,ImageFont.truetype(FONT,s))); x+=w
+        y+=int(h*gap)
+    sh=Image.new("RGBA",im.size,(0,0,0,0)); sd=ImageDraw.Draw(sh)
+    for x,yy,t,c,f in items: sd.text((x,yy),t,font=f,fill=(0,0,0,255),stroke_width=max(5,f.size//9),stroke_fill=(0,0,0,255))
+    base=Image.alpha_composite(base,sh.filter(ImageFilter.GaussianBlur(4)))
+    ol=Image.new("RGBA",im.size,(0,0,0,0)); od=ImageDraw.Draw(ol)
+    for x,yy,t,c,f in items: od.text((x,yy),t,font=f,fill=(0,0,0,235),stroke_width=max(3,f.size//16),stroke_fill=(0,0,0,235))
+    base=Image.alpha_composite(base,ol); d=ImageDraw.Draw(base)
+    for x,yy,t,c,f in items: d.text((x,yy),t,font=f,fill=c)
+    return base.convert("RGB")
+def rich_wrap(words,mw,m):
+    # words: [[(metin,renk,boyut),...], ...] (her kelime birden çok parça olabilir); satırlara böler
+    lines=[];cur=[];cw=0
+    sp=m.textlength(" ",font=ImageFont.truetype(FONT,words[0][0][2]))
+    for w in words:
+        ww=sum(m.textlength(t,font=ImageFont.truetype(FONT,s)) for t,_,s in w)
+        add=ww+(sp if cur else 0)
+        if cur and cw+add>mw: lines.append(cur); cur=[];cw=0;add=ww
+        if cur: cur.append((" ",CREAM,w[0][2]))
+        cur.extend(w); cw+=add
+    if cur: lines.append(cur)
+    return lines
+im=Image.open(f"{SRC}/sayfa6.jpg").convert("RGB"); W,H=im.size; S=int(H*0.0265); m=ImageDraw.Draw(im)
+P1="Çoğu insan, yüzünü göstermeden de içerik üretebileceğini geç fark ediyor.".split()
+P2_pre=up("Sen de yüzünü göstermeden kendi karakterini oluşturmayı öğrenmek için").split()
+P2_post=up("takip et ve yoruma KARAKTER yaz.").split()
+w1=[[(w,CREAM,S)] for w in P1]
+w2=[[(w,CREAM,S)] for w in P2_pre]+[[("@moneyymadam",GOLD,S),("’ı",CREAM,S)]]+[[(w,CREAM,S)] for w in [x.replace("TAKİP","TAKİP") for x in P2_post]]
+L1=rich_wrap(w1,W*0.88,m); L2=rich_wrap(w2,W*0.88,m)
+lines=L1+[[("",CREAM,int(S*0.55))]]+L2
+im=draw_rich(im,lines,H*0.815)
+im.save(f"{OUT}/sayfa6.jpg",quality=92); print("ok sayfa 6, satır:",len(lines))
