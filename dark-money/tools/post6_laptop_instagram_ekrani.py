@@ -88,21 +88,21 @@ circ(AX+AV/2+5,AY+AV/2+5,AV/2+9,outline=(221,225,230),w=4)
 av,m=avatar_circle(AV); cv.paste(av,(r(AX+5),r(AY+5)),m)
 circ(AX+AV-12,AY+AV-8,25,fill=(255,255,255)); circ(AX+AV-12,AY+AV-8,20,fill=(28,28,32))
 line([(AX+AV-12,AY+AV-18),(AX+AV-12,AY+AV+2)],3.6,(255,255,255)); line([(AX+AV-22,AY+AV-8),(AX+AV-2,AY+AV-8)],3.6,(255,255,255))
-d.text((r(340),r(160)),USER,font=font("Bold",40),fill=INK,anchor="lm")
-cx,cy=900,160
+d.text((r(340),r(150)),USER,font=font("Bold",60),fill=INK,anchor="lm")
+cx,cy=915,150
 for i in range(8):
     a=i*math.pi/4
     line([(cx+math.cos(a)*15,cy+math.sin(a)*15),(cx+math.cos(a)*23,cy+math.sin(a)*23)],7,INK)
 circ(cx,cy,18,fill=INK); circ(cx,cy,8,fill=BG)
-rrect((340,214,590,268),14,fill=(236,231,226))
-d.text((r(465),r(241)),"Profili düzenle",font=font("SemiBold",22),fill=INK,anchor="mm")
-rrect((606,214,856,268),14,fill=(236,231,226))
-d.text((r(731),r(241)),"Arşivi görüntüle",font=font("SemiBold",22),fill=INK,anchor="mm")
+rrect((340,214,600,274),15,fill=(236,231,226))
+d.text((r(470),r(244)),"Profili düzenle",font=font("SemiBold",27),fill=INK,anchor="mm")
+rrect((616,214,876,274),15,fill=(236,231,226))
+d.text((r(746),r(244)),"Arşivi görüntüle",font=font("SemiBold",27),fill=INK,anchor="mm")
 
 # ---- profil adı + biyografi (ekran görüntüsündeki gerçek metin)
-d.text((r(76),r(352)),NAME,font=font("Bold",27),fill=INK,anchor="lm")
-BF=font("Regular",25); maxw=(W-76-60-44)*K
-y=396
+d.text((r(76),r(352)),NAME,font=font("Bold",40),fill=INK,anchor="lm")
+BF=font("Medium",31); maxw=(W-76-48-50)*K
+y=406
 for em,txt in BIO:
     # uzun satırı kelimelere bölerek sar
     lines=[];cur=""
@@ -111,13 +111,13 @@ for em,txt in BIO:
         if d.textlength(s,font=BF)<=maxw: cur=s
         else: lines.append(cur); cur=w
     lines.append(cur)
-    emoji(em,76,y-15,29)
+    emoji(em,76,y-17,33)
     for i,l in enumerate(lines):
-        d.text((r(118),r(y)),l,font=BF,fill=INK,anchor="lm"); y+=38
-    y+=2
+        d.text((r(124),r(y)),l,font=BF,fill=INK,anchor="lm"); y+=45
+    y+=3
 
 # ---- sekmeler
-ty=y+30
+ty=y+10
 line([(40,ty),(960,ty)],2,LINE)
 gx,gy=367,ty+20
 for i in range(3):
@@ -127,10 +127,10 @@ rrect((484,ty+18,516,ty+50),9,outline=GRAY,w=3); d.polygon([(r(496),r(ty+26)),(r
 rrect((564,ty+18,596,ty+50),9,outline=GRAY,w=3); circ(580,ty+29,5,outline=GRAY,w=2.6); d.arc([r(569),r(ty+36),r(591),r(ty+60)],200,340,fill=GRAY,width=r(2.6))
 
 # ---- gönderi ızgarası (3 gönderi, tek sıra)
-SZ=(W-2*30-2*8)//3; gy0=ty+76
+PAD=46; SZ=(W-2*PAD-2*8)//3; gy0=ty+68
 for i in range(3):
     t=crop(i); s=min(t.size); t=t.crop(((t.size[0]-s)//2,(t.size[1]-s)//2,(t.size[0]+s)//2,(t.size[1]+s)//2)).resize((r(SZ),r(SZ)),Image.LANCZOS)
-    cv.paste(t,(r(30+i*(SZ+8)),r(gy0)))
+    cv.paste(t,(r(PAD+i*(SZ+8)),r(gy0)))
 print("grid bitiş y:",gy0+SZ,"/",H)
 
 flat=cv.resize((W,H),Image.LANCZOS)
