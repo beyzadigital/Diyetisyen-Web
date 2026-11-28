@@ -11,8 +11,9 @@ OUT=R+"post6/yazisiz/sayfa1.jpg"
 FD="/usr/share/fonts/opentype/inter/Inter-"; EMOJI="/usr/share/fonts/truetype/noto/NotoColorEmoji.ttf"
 # ekranın beyaz alanının köşeleri (sol-üst, sağ-üst, sağ-alt, sol-alt)
 SCREEN=[(1250,1515),(1696,1521),(1594,1996),(1165,1912)]
-SRC=[(R+"post4/yazisiz/sayfa4.jpg",(851,1131,1523,1803)),
-     (R+"post3/yazisiz/sayfa1.jpg",(1322,168,1792,638)),
+# ızgara sırası (soldan sağa): yağmurlu sokak, ofis, butik
+SRC=[(R+"post3/yazisiz/sayfa1.jpg",(1322,168,1792,638)),
+     (R+"post4/yazisiz/sayfa4.jpg",(851,1131,1523,1803)),
      (R+"post1/yazisiz/sayfa1.jpg",(1121,607,1744,1230))]
 NAME="Money Madam | AI ile Kazan"; USER="moneyymadam"
 BIO=[("🎭","Yüz göstermeden AI ile sayfanızı oluşturun ve kazanmayı öğrenin"),
